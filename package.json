@@ -1,0 +1,43 @@
+{
+  "name": "shop-it",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "npx tsc && react-scripts build",
+    "dev": "react-scripts start",
+    "lint": "eslint . ",
+    "start": "node dist/server/server.js",
+    "test": "jest --forceExit",
+    "migrate": "cross-env NODE_OPTIONS=\"-r dotenv/config\" knex --knexfile dist/server/database/knexfile.js migrate:latest",
+    "rollback": "cross-env NODE_OPTIONS=\"-r dotenv/config\" knex --knexfile dist/server/database/knexfile.js migrate:rollback",
+    "seed": "cross-env NODE_ENV=development NODE_OPTIONS=\"-r dotenv/config\" knex --knexfile dist/server/database/knexfile.js seed:run"
+  },
+  "dependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20.14.9",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "cors": "^2.8.5",
+    "cra-template-typescript": "1.2.0",
+    "cross-env": "^7.0.3",
+    "knex": "^3.1.0",
+    "pg": "^8.12.0",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "react-scripts": "5.0.1",
+    "typescript": "^5.5.3"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
